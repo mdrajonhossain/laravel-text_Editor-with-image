@@ -13,7 +13,11 @@
 </head>
 <body>
 <div class="container mt-5">
+    <a href="{{ url('/') }}">Home</a>
+
+
     <h2>Create a New Post</h2>
+    
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
