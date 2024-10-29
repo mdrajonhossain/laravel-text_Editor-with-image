@@ -3,9 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 Route::get('/', function () {
-    return view('welcome');
+    // $data = Post::all()->first();
+    $data = Post::latest()->first(['title', 'content']);
+
+    return view('welcome', ["data" => $data]);
 });
 
 // Post Routes
